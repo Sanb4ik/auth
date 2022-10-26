@@ -3,6 +3,9 @@ import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { UsersModule } from './users/users.module';
 import { User } from './users/users.model';
+import { RolesModule } from './roles/roles.module';
+import { Role } from './roles/roles.model';
+import { UserRoles } from './roles/user-roles.model';
 
 @Module({
     controllers: [],
@@ -18,10 +21,10 @@ import { User } from './users/users.model';
             username: 'postgres',
             password: 'master',
             database: 'auth',
-            models: [User],
+            models: [User, Role, UserRoles],
             autoLoadModels: true,
-            synchronize: true
-        }), UsersModule],
+            // synchronize: true
+        }), UsersModule, RolesModule],
 })
 export class AppModule {
 }
