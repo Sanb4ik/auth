@@ -8,7 +8,7 @@ interface RolesCreationAttrs{
     description: string;
 }
 
-@Table({tableName: 'roles'})
+@Table({tableName: 'roles',createdAt: false, updatedAt: false})
 export class Role extends Model<Role, RolesCreationAttrs>{
 
     @ApiProperty({example: '1',description:'unique id of the user'})

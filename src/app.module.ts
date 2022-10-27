@@ -24,7 +24,9 @@ import { UserRoles } from './roles/user-roles.model';
             models: [User, Role, UserRoles],
             autoLoadModels: true,
             // synchronize: true
-        }), UsersModule, RolesModule],
+        }),
+        UsersModule,
+        RolesModule],
 })
 export class AppModule {
 }

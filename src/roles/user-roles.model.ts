@@ -4,7 +4,7 @@ import { User } from "src/users/users.model";
 import { Role } from "./roles.model";
 
 
-@Table({tableName: 'roles', createdAt: false, updatedAt: false})
+@Table({tableName: 'UserRoles', createdAt: false, updatedAt: false})
 export class UserRoles extends Model<UserRoles>{
 
     @ApiProperty({example: '1',description:'unique id of the user'})
@@ -12,11 +12,11 @@ export class UserRoles extends Model<UserRoles>{
     id: string;
 
    
-    @ForeignKey(()=> Role)
+    @ForeignKey(() => Role)
     @Column({type: DataType.INTEGER})
     roleId: number;
     
-    @ForeignKey(()=> User)
+    @ForeignKey(() => User)
     @Column({type: DataType.INTEGER})
     userId: number;
 

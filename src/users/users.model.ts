@@ -23,7 +23,7 @@ export class User extends Model<User, UserCreationAttrs>{
     @Column({type: DataType.STRING, defaultValue: false})
     password: string;
 
-    @BelongsToMany(() => User, () => UserRoles)
+    @BelongsToMany(() => Role, () => UserRoles)
     roles: Role[];
 
 }
